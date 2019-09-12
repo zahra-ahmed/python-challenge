@@ -37,14 +37,14 @@ for x in range(len(pl_list)-1):
 pl_average = round(sum(change_list) / len(change_list), 2)
 
 # greatest increase in profit/loss
-greatest_increase = 0
+greatest_increase = int(change_list[0])
 for y in range(len(change_list)):
     if int(change_list[y]) > int(greatest_increase):
         greatest_increase = int(change_list[y])
         highest_month = month_list[y+1]
 
 # greatest decrease in profit/loss
-greatest_decrease = 1000000000000
+greatest_decrease = int(change_list[0])
 for y in range(len(change_list)):
     if int(change_list[y]) < int(greatest_decrease):
         greatest_decrease = int(change_list[y])
@@ -54,10 +54,10 @@ for y in range(len(change_list)):
 print(f"Financial Analysis")
 print(f"---------------------------")
 print(f"Total Months: {total_months}")
-print(f"Total: {net_pl}")
-print(f"Average Change: {pl_average}")
-print(f"Greatest Increase in Profits: {highest_month} ({greatest_increase})")
-print(f"Greatest Decrease in Profits: {lowest_month} ({greatest_decrease})")
+print(f"Total: ${net_pl}")
+print(f"Average Change: ${pl_average}")
+print(f"Greatest Increase in Profits: {highest_month} (${greatest_increase})")
+print(f"Greatest Decrease in Profits: {lowest_month} (${greatest_decrease})")
 
 
 # write into txt file
@@ -69,10 +69,10 @@ with open(text_file, 'w') as text:
     text.write(f"Financial Analysis\n")
     text.write(f"---------------------------\n")
     text.write(f"Total Months: {total_months}\n")
-    text.write(f"Total: {net_pl}\n")
-    text.write(f"Average Change: {pl_average}\n")
-    text.write(f"Greatest Increase in Profits: {highest_month} ({greatest_increase})\n")
-    text.write(f"Greatest Decrease in Profits: {lowest_month} ({greatest_decrease})\n")
+    text.write(f"Total: ${net_pl}\n")
+    text.write(f"Average Change: ${pl_average}\n")
+    text.write(f"Greatest Increase in Profits: {highest_month} (${greatest_increase})\n")
+    text.write(f"Greatest Decrease in Profits: {lowest_month} (${greatest_decrease})\n")
 
 
 
